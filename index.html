@@ -19,7 +19,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:clip;width:100%;}
-body{font-family:Montserrat,Arial,sans-serif;background:var(--cream);color:var(--ink);overflow-x:clip;width:100%;max-width:100%;}
+body{font-family:Montserrat,Arial,sans-serif;background:var(--cream);color:var(--ink);overflow-x:clip;width:100%;max-width:100%;margin:0;}
 body.intro-active{overflow:hidden}
 button,a{font:inherit}
 img{display:block;max-width:100%}
@@ -121,10 +121,9 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
   height:126px;
   margin:40px auto 20px;
   border-radius:50%;
-  border:1px solid rgba(218,183,78,.75);
-  background:
-    radial-gradient(circle at 50% 42%,#693d70 0%,#45234d 58%,#2a1531 100%);
-  color:#e5c980;
+  border:1px solid rgba(255,244,198,.95);
+  background:linear-gradient(145deg,#f0d58a 0%,#c7a95b 52%,#a8863f 100%);
+  color:#29402d;
   cursor:pointer;
   box-shadow:
     0 0 0 12px rgba(229,201,128,.08),
@@ -135,14 +134,14 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
 .seal:hover{
   transform:scale(1.05);
   box-shadow:
-    0 0 0 15px rgba(152,100,149,.12),
+    0 0 0 15px rgba(229,201,128,.10),
     0 0 42px rgba(212,177,78,.42);
 }
 
 .seal-ring{
   position:absolute;
   inset:10px;
-  border:1px solid rgba(234,216,183,.40);
+  border:1px solid rgba(255,248,216,.65);
   border-radius:50%;
 }
 
@@ -153,17 +152,20 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
   font-style:italic;
   line-height:1;
   transform:translateY(3px);
+  color:#29402d;
 }
 
 .seal-initials span{
   font-size:24px;
   margin:0 2px;
+  color:#29402d;
 }
 
 .seal-star{
   display:block;
   font-size:9px;
   margin-top:7px;
+  color:#29402d;
 }
 
 .tap-text{
@@ -171,6 +173,14 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
   font-size:12px;
   font-weight:500;
   letter-spacing:.1px;
+  animation:tapJump 1.5s ease-in-out infinite;
+  transform-origin:center;
+}
+@keyframes tapJump{
+  0%,100%{transform:translateY(0)}
+  35%{transform:translateY(-5px)}
+  55%{transform:translateY(0)}
+  70%{transform:translateY(-2px)}
 }
 
 .intro-divider{
@@ -201,7 +211,7 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
 
 /* Hero / First Page */
 .hero{
- min-height:100vh;height:100vh;width:100%;max-width:100%;position:relative;display:grid;place-items:center;
+ min-height:100vh;height:100vh;width:100vw;max-width:none;position:relative;display:grid;place-items:center;
  text-align:center;color:#fff;overflow:hidden;
  background:
  radial-gradient(circle at 50% 18%,rgba(121,145,104,.30),transparent 38%),
@@ -286,6 +296,36 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
 @keyframes arrowBounce{
  0%,100%{transform:translateY(0) rotate(45deg);}
  50%{transform:translateY(5px) rotate(45deg);}
+}
+
+
+/* Date reveal section */
+.reveal-date-section{background:linear-gradient(135deg,#f4f1e8 0%,#efede3 52%,#e8e7db 100%);text-align:center;color:#29402d;min-height:520px;display:flex;align-items:center}
+.reveal-date-section .inner{max-width:980px}
+.reveal-kicker{color:#b28b3f;font-size:11px;letter-spacing:4px;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+.reveal-date-section h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(42px,5vw,64px);font-weight:500;line-height:1;margin:0;color:#29402d}
+.reveal-subtitle{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;color:#8e7957;font-size:18px;margin-top:12px}
+.reveal-cards{display:flex;justify-content:center;gap:28px;margin:42px auto 30px;flex-wrap:wrap}
+.reveal-card-wrap{width:112px}
+.reveal-card-label{display:block;margin-bottom:9px;font-size:11px;letter-spacing:3px;color:#6f5a35;font-weight:600}
+.scratch-card{position:relative;width:112px;height:112px;border-radius:16px;overflow:hidden;border:1px solid #d7bb68;background:linear-gradient(145deg,#4a5f45 0%,#66754d 52%,#3d503b 100%);box-shadow:0 8px 20px rgba(60,50,25,.18);touch-action:none;cursor:crosshair}
+.scratch-card .revealed{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:"Cormorant Garamond",Georgia,serif;font-size:42px;color:#29402d;background:linear-gradient(145deg,#f7f3e7,#ebe5d5);z-index:1}
+.scratch-card canvas{position:absolute;inset:0;width:100%;height:100%;z-index:2}
+.scratch-card::after{content:"✦";position:absolute;inset:0;display:grid;place-items:center;color:#f4dda0;font-size:24px;z-index:3;pointer-events:none;text-shadow:0 2px 8px rgba(0,0,0,.2)}
+.scratch-card.cleared canvas,.scratch-card.cleared::after{display:none}
+.scratch-again{display:none;margin:18px auto 0;border:0;background:transparent;color:#8f7134;text-decoration:underline;text-underline-offset:3px;font-family:inherit;font-size:14px;cursor:pointer;padding:6px 10px}
+.scratch-again.visible{display:inline-flex;align-items:center;gap:6px}
+.scratch-again .reset-icon{font-size:16px;text-decoration:none}
+.reveal-all{border:1px solid #d2b76c;background:#b09657;color:#fff8e8;border-radius:999px;padding:12px 22px;font-size:11px;letter-spacing:.5px;font-weight:600;cursor:pointer;box-shadow:0 6px 16px rgba(55,50,30,.14);transition:.25s}
+.reveal-all:hover{transform:translateY(-2px);background:#76613d}
+@media(max-width:600px){
+ .reveal-date-section{min-height:480px;padding:78px 18px}
+ .reveal-date-section h2{font-size:42px}
+ .reveal-subtitle{font-size:16px}
+ .reveal-cards{gap:12px;margin-top:34px}
+ .reveal-card-wrap,.scratch-card{width:96px}
+ .scratch-card{height:96px}
+ .scratch-card .revealed{font-size:24px}
 }
 
 /* Invitation */
@@ -476,11 +516,28 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
       in the joy of our union as we begin a new chapter of love, laughter, and forever.”
     </p>
     <div class="hero-reveal-wrap">
-      <button class="hero-reveal" type="button" data-target="invitation">
+      <button class="hero-reveal" type="button" data-target="reveal-date">
         <span class="heart">♥</span> SCRATCH TO REVEAL DATE
       </button>
       <span class="arrow" aria-hidden="true"></span>
     </div>
+  </div>
+</section>
+
+<section class="section reveal-date-section" id="reveal-date">
+  <div class="inner fade">
+    <p class="reveal-kicker">✦ &nbsp; REVEAL &nbsp; ✦</p>
+    <h2>Scratch to Reveal Our Date</h2>
+    <p class="reveal-subtitle">Rub each card gently to unlock the auspicious day.</p>
+
+    <div class="reveal-cards">
+      <div class="reveal-card-wrap"><span class="reveal-card-label">DAY</span><div class="scratch-card" data-value="25"><div class="revealed">25</div><canvas></canvas></div></div>
+      <div class="reveal-card-wrap"><span class="reveal-card-label">MONTH</span><div class="scratch-card" data-value="OCT"><div class="revealed">OCT</div><canvas></canvas></div></div>
+      <div class="reveal-card-wrap"><span class="reveal-card-label">YEAR</span><div class="scratch-card" data-value="2026"><div class="revealed">2026</div><canvas></canvas></div></div>
+    </div>
+
+    <button class="reveal-all" type="button">◉ &nbsp; REVEAL ALL CARDS</button>
+    <button class="scratch-again" type="button" aria-label="Scratch again"><span class="reset-icon">↻</span> Scratch again</button>
   </div>
 </section>
 
@@ -670,6 +727,62 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
 
   countdown();
   setInterval(countdown, 1000);
+
+
+  // Scratch-to-reveal date cards
+  document.querySelectorAll('.scratch-card').forEach(card => {
+    const canvas = card.querySelector('canvas');
+    const ctx = canvas.getContext('2d', {willReadFrequently:true});
+    const resize = () => {
+      const rect = card.getBoundingClientRect();
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.round(rect.width*dpr); canvas.height = Math.round(rect.height*dpr);
+      canvas.style.width = rect.width+'px'; canvas.style.height = rect.height+'px';
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      const g=ctx.createLinearGradient(0,0,rect.width,rect.height);
+      g.addColorStop(0,'#3f513d'); g.addColorStop(.48,'#68764f'); g.addColorStop(1,'#46583f');
+      ctx.fillStyle=g; ctx.fillRect(0,0,rect.width,rect.height);
+      ctx.globalAlpha=.35;
+      for(let i=0;i<42;i++){ctx.fillStyle='#d8b85f';ctx.beginPath();ctx.arc(Math.random()*rect.width,Math.random()*rect.height,Math.random()*1.7+.4,0,Math.PI*2);ctx.fill();}
+      ctx.globalAlpha=1;
+    };
+    resize(); window.addEventListener('resize',resize);
+    let drawing=false, cleared=false, last=0;
+    const scratch=e=>{
+      if(cleared)return; const r=canvas.getBoundingClientRect(); const x=e.clientX-r.left,y=e.clientY-r.top;
+      ctx.globalCompositeOperation='destination-out'; ctx.beginPath(); ctx.arc(x,y,18,0,Math.PI*2); ctx.fill();
+      last++; if(last>18){
+        const data=ctx.getImageData(0,0,canvas.width,canvas.height).data; let clear=0;
+        for(let i=3;i<data.length;i+=16) if(data[i]<20) clear++;
+        if(clear/(data.length/16)>.58){card.classList.add('cleared');cleared=true; updateScratchAgain();}
+      }
+    };
+    card.addEventListener('pointerdown',e=>{drawing=true;card.setPointerCapture(e.pointerId);scratch(e)});
+    card.addEventListener('pointermove',e=>{if(drawing)scratch(e)});
+    card.addEventListener('pointerup',()=>drawing=false); card.addEventListener('pointercancel',()=>drawing=false);
+  });
+  const scratchAgain=document.querySelector('.scratch-again');
+  const updateScratchAgain=()=>{ if(scratchAgain) scratchAgain.classList.toggle('visible', [...document.querySelectorAll('.scratch-card')].some(c=>c.classList.contains('cleared'))); };
+  document.querySelector('.reveal-all')?.addEventListener('click',()=>{document.querySelectorAll('.scratch-card').forEach(c=>c.classList.add('cleared')); updateScratchAgain();});
+  scratchAgain?.addEventListener('click',()=>{
+    document.querySelectorAll('.scratch-card').forEach(card=>{
+      card.classList.remove('cleared');
+      const canvas=card.querySelector('canvas');
+      const ctx=canvas.getContext('2d');
+      const rect=card.getBoundingClientRect();
+      const dpr=Math.min(window.devicePixelRatio||1,2);
+      canvas.width=Math.round(rect.width*dpr); canvas.height=Math.round(rect.height*dpr);
+      canvas.style.width=rect.width+'px'; canvas.style.height=rect.height+'px';
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      const g=ctx.createLinearGradient(0,0,rect.width,rect.height);
+      g.addColorStop(0,'#3f513d'); g.addColorStop(.48,'#68764f'); g.addColorStop(1,'#46583f');
+      ctx.globalCompositeOperation='source-over'; ctx.globalAlpha=1; ctx.fillStyle=g; ctx.fillRect(0,0,rect.width,rect.height);
+      ctx.globalAlpha=.35;
+      for(let i=0;i<42;i++){ctx.fillStyle='#d8b85f';ctx.beginPath();ctx.arc(Math.random()*rect.width,Math.random()*rect.height,Math.random()*1.7+.4,0,Math.PI*2);ctx.fill();}
+      ctx.globalAlpha=1;
+    });
+    updateScratchAgain();
+  });
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
