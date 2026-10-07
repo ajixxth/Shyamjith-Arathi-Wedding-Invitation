@@ -337,12 +337,33 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
 .names small{display:block;font-size:32px;line-height:1;margin:25px}
 
 /* Countdown */
-.countdown-section{background:var(--dark);color:#fff;text-align:center}
-.countdown{display:grid;grid-template-columns:repeat(4,1fr);max-width:720px;margin:55px auto 0;border-top:1px solid rgba(255,255,255,.2);border-bottom:1px solid rgba(255,255,255,.2)}
-.time{padding:30px 8px}
-.time+.time{border-left:1px solid rgba(255,255,255,.18)}
-.time strong{display:block;font-family:"Cormorant Garamond",serif;font-weight:300;font-size:60px}
-.time small{font-size:9px;letter-spacing:3px;color:#aaa}
+.countdown-section{
+  background:linear-gradient(135deg,#f4f1e8 0%,#efede3 55%,#e8e7db 100%);
+  color:#f7f1df;
+  text-align:center;
+  padding:78px 22px 86px;
+}
+.countdown-panel{
+  width:min(1120px,100%);
+  margin:auto;
+  padding:48px 54px 50px;
+  border-radius:28px;
+  background:radial-gradient(circle at 28% 25%,#35563d 0%,#294a32 42%,#1d3826 100%);
+  border:1px solid rgba(203,185,133,.6);
+  box-shadow:0 22px 45px rgba(42,55,40,.22);
+}
+.countdown-kicker{color:#d9bd72;font-size:11px;letter-spacing:4px;text-transform:uppercase;font-weight:600;margin-bottom:10px}
+.countdown-panel h2{font-size:clamp(42px,5vw,64px);line-height:1;color:#fff8e8;margin:0}
+.countdown-subtitle{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;color:#d8cdb5;font-size:18px;margin-top:12px}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:850px;margin:34px auto 30px}
+.time{padding:25px 10px 22px;border:1px solid rgba(203,185,133,.58);border-radius:18px;background:rgba(255,248,232,.09)}
+.time strong{display:block;font-family:"Cormorant Garamond",serif;font-weight:600;font-size:56px;line-height:.95;color:#fff8e8}
+.time small{display:block;margin-top:9px;font-size:10px;letter-spacing:2.5px;color:#dfc779;font-weight:600}
+.countdown-actions{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.calendar-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;background:#c4a44f;color:#17251a;border:1px solid #dfc779;border-radius:999px;padding:13px 22px;font-size:11px;letter-spacing:.4px;font-weight:600;transition:.25s}
+.calendar-btn:hover{transform:translateY(-2px);background:#d2b45d}
+.wedding-time{color:#e7dcc4;font-size:12px;letter-spacing:.2px}
+.wedding-time .clock-icon{color:#d9bd72;margin-right:5px}
 
 /* Details */
 .details{text-align:center;background:#ebe5da}
@@ -460,6 +481,19 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
  .gallery{grid-template-columns:1fr}
  .event{grid-template-columns:48px 1fr}
 }
+@media(max-width:650px){
+ .countdown-section{padding:60px 14px 68px}
+ .countdown-panel{padding:36px 16px 34px;border-radius:22px}
+ .countdown-panel h2{font-size:40px}
+ .countdown-subtitle{font-size:16px;line-height:1.35}
+ .countdown{grid-template-columns:repeat(2,1fr);gap:10px;margin:28px auto 24px}
+ .time{padding:20px 8px 18px;border-radius:14px}
+ .time strong{font-size:45px}
+ .time small{font-size:9px;letter-spacing:2px}
+ .countdown-actions{gap:12px}
+ .calendar-btn{font-size:10px;padding:12px 16px}
+ .wedding-time{font-size:10px}
+}
 @media(prefers-reduced-motion:reduce){
  html{scroll-behavior:auto}
  *,*:before,*:after{animation:none!important;transition:none!important}
@@ -541,127 +575,25 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
   </div>
 </section>
 
-<section class="section invitation" id="invitation">
-  <div class="inner fade">
-    <p class="kicker">With the blessings of our families</p>
-    <h2>We invite you</h2>
-    <div class="ornament">✦</div>
-
-    <div class="invitation-copy">
-      <p>Mr. Vijayan T &amp; Mrs. Sangeetha V.C.</p>
-      <p>Thiruvangatt House, Ozhu r P.O., Malappuram<br>Phone: +91 9895215292</p>
-      <p style="margin-top:28px">We will be most honoured by your gracious presence with family to bless the auspicious occasion of the marriage of our daughter.</p>
-    </div>
-
-    <div class="names">
-      <span>Arathi</span><small>&amp;</small><span>Shyamanjith</span>
-    </div>
-
-    <div class="invitation-copy">
-      <p>S/o Mr. Pratheep Kumar &amp; Mrs. Prameela</p>
-      <p>Kuyilam Parambil (H), Sreelakam, Padinjarangadi</p>
-    </div>
-  </div>
-</section>
-
 <section class="section countdown-section">
-  <div class="inner fade">
-    <p class="kicker">Save the date</p>
-    <h2>Counting the moments</h2>
+  <div class="countdown-panel fade">
+    <p class="countdown-kicker">✧ &nbsp; COUNTING DOWN TO FOREVER &nbsp; ✧</p>
+    <h2>Until We Say "I Do"</h2>
+    <p class="countdown-subtitle">Every second brings us closer to the most magical day of our lives.</p>
     <div class="countdown" aria-live="polite">
       <div class="time"><strong id="days">00</strong><small>DAYS</small></div>
       <div class="time"><strong id="hours">00</strong><small>HOURS</small></div>
-      <div class="time"><strong id="minutes">00</strong><small>MINUTES</small></div>
-      <div class="time"><strong id="seconds">00</strong><small>SECONDS</small></div>
+      <div class="time"><strong id="minutes">00</strong><small>MINS</small></div>
+      <div class="time"><strong id="seconds">00</strong><small>SECS</small></div>
+    </div>
+    <div class="countdown-actions">
+      <a class="calendar-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Shyamjith%20%26%20Arathi%20Wedding&dates=20261025T040000Z%2F20261025T050000Z&details=Wedding%20of%20Shyamjith%20%26%20Arathi&location=Hooriya%20Auditorium%2C%20Puthentheru" target="_blank" rel="noopener">▣ &nbsp; ADD TO GOOGLE CALENDAR</a>
+      <span class="wedding-time"><span class="clock-icon">◷</span> Sunday, 25 October 2026 · 9:30 AM</span>
     </div>
   </div>
 </section>
 
-<section class="section details">
-  <div class="inner fade">
-    <p class="kicker">The celebration</p>
-    <h2>Wedding Details</h2>
 
-    <div class="details-grid">
-      <article class="detail">
-        <div class="detail-icon">♡</div>
-        <h3>Muhurtham</h3>
-        <p>25 October 2026</p>
-        <p>9:30 AM – 10:30 AM</p>
-      </article>
-      <article class="detail">
-        <div class="detail-icon">⌖</div>
-        <h3>Venue</h3>
-        <p>Hooriya Auditorium</p>
-        <p>Puthentheru</p>
-      </article>
-    </div>
-
-    <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Hooriya%20Auditorium%20Puthentheru" target="_blank" rel="noopener">VIEW LOCATION</a>
-  </div>
-</section>
-
-<section class="photo-section" style="background:linear-gradient(180deg,#77736b,#292824)">
-  <img src="assets/couple.jpg" alt="Shyamjith and Arathi" onerror="this.style.display='none'">
-  <div class="photo-overlay">
-    <div>
-      <p class="kicker">Two hearts</p>
-      <h2>One beautiful journey</h2>
-    </div>
-  </div>
-</section>
-
-<section class="section story">
-  <div class="inner fade">
-    <p class="kicker">Our journey</p>
-    <h2>From this moment</h2>
-
-    <div class="timeline">
-      <div class="event">
-        <div class="event-no">01</div>
-        <div><h3>The Beginning</h3><p>Every beautiful story begins with a simple moment.</p></div>
-      </div>
-      <div class="event">
-        <div class="event-no">02</div>
-        <div><h3>The Journey</h3><p>Two lives slowly became one beautiful journey.</p></div>
-      </div>
-      <div class="event">
-        <div class="event-no">03</div>
-        <div><h3>Forever</h3><p>And now, we begin our forever together.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section gallery-section">
-  <div class="inner fade">
-    <p class="kicker">Moments</p>
-    <h2>A few memories</h2>
-    <div class="gallery">
-      <img src="assets/gallery-1.jpg" alt="Memory 1">
-      <img src="assets/gallery-2.jpg" alt="Memory 2">
-      <img src="assets/gallery-3.jpg" alt="Memory 3">
-      <img src="assets/gallery-4.jpg" alt="Memory 4">
-    </div>
-  </div>
-</section>
-
-<section class="section rsvp">
-  <div class="inner fade">
-    <p class="kicker">Your presence matters</p>
-    <h2>Will you join us?</h2>
-    <p>We would be delighted to celebrate this special day with you.</p>
-    <a class="btn" href="https://wa.me/919895215292?text=Hello%20Arathi%20%26%20Shyamanjith%2C%20I%20would%20love%20to%20attend%20your%20wedding." target="_blank" rel="noopener">RSVP ON WHATSAPP</a>
-  </div>
-</section>
-
-<section class="final">
-  <div>
-    <p class="kicker">With love</p>
-    <h2>Shyamjith<span>&amp;</span>Arathi</h2>
-    <p class="final-date">25 · 10 · 2026</p>
-  </div>
-</section>
 
 </main>
 
@@ -698,12 +630,6 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
       musicBtn.classList.remove("playing");
     }
   });
-
-  document.querySelectorAll("[data-target]").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const target = document.getElementById(btn.dataset.target);
-      if (target) target.scrollIntoView({behavior:"smooth"});
-    });
   });
 
   const wedding = new Date("2026-10-25T09:30:00+05:30").getTime();
@@ -772,14 +698,6 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
     });
     updateScratchAgain();
   });
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add("show");
-    });
-  }, {threshold:.12});
-
-  document.querySelectorAll(".fade").forEach(el => observer.observe(el));
 })();
 </script>
 </body>
