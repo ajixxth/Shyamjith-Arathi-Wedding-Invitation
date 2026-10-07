@@ -708,6 +708,16 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
   .moments-thumbs{width:max-content;max-width:calc(100% - 28px);gap:6px;margin-top:14px}
   .moments-thumb{flex-basis:58px;height:72px}
 }
+
+/* Section spacing optimization: keep cards visually connected without crowding */
+.invitation-details-section{padding-top:28px !important;padding-bottom:28px !important;}
+.venue-section{padding-top:28px !important;padding-bottom:28px !important;}
+.moments-section{padding-top:28px !important;padding-bottom:28px !important;}
+@media(max-width:650px){
+  .invitation-details-section{padding-top:24px !important;padding-bottom:24px !important;}
+  .venue-section{padding-top:24px !important;padding-bottom:24px !important;}
+  .moments-section{padding-top:24px !important;padding-bottom:24px !important;}
+}
 </style>
 
 </head>
