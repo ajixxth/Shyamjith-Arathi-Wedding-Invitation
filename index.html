@@ -221,7 +221,7 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
  display:flex;flex-direction:column;align-items:center;
 }
 .hero-logo{
- width:78px;height:78px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;
+ width:78px;height:78px;border-radius:50%;display:flex;flex-direction:row;align-items:center;justify-content:center;
  margin-bottom:24px;padding:5px 0 4px;
  border:1px solid rgba(220,192,127,.82);
  background:radial-gradient(circle at 50% 40%,#425c43 0%,#29402d 62%,#1d2d20 100%);
@@ -229,8 +229,8 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
  font-family:"Cormorant Garamond",Georgia,serif;font-size:26px;font-style:italic;
  line-height:.72;
 }
-.hero-logo .logo-letter{display:block;font-size:26px;line-height:.72;margin:0}
-.hero-logo .logo-amp{display:block;font-size:17px;line-height:.72;margin:4px 0 3px}
+.hero-logo .logo-letter{display:inline-block;font-size:26px;line-height:1;margin:0 1px}
+.hero-logo .logo-amp{display:inline-block;font-size:17px;line-height:1;margin:0 2px}
 .hero-badge{
  display:inline-flex;align-items:center;gap:8px;padding:8px 20px;
  border:1px solid rgba(232,211,168,.72);border-radius:999px;
@@ -272,11 +272,20 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
 .hero-reveal:hover{transform:translateY(-2px);background:linear-gradient(180deg,#a69a69 0%,#91845b 100%);box-shadow:0 8px 25px rgba(0,0,0,.2)}
 .hero-reveal .heart{position:absolute;left:20px;top:50%;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;
  color:#fff4dc;font-size:10px;line-height:1}
+.hero-reveal::after{
+ content:"♥";position:absolute;right:20px;top:50%;transform:translateY(-50%);
+ color:#fff4dc;font-size:10px;line-height:1;
+}
 .hero-reveal-wrap > .arrow{
  position:relative;width:10px;height:10px;margin-top:10px;display:block;
  border-right:2px solid #e8cf83;border-bottom:2px solid #e8cf83;
  transform:rotate(45deg);
  box-sizing:border-box;
+ animation:arrowBounce 1.35s ease-in-out infinite;
+}
+@keyframes arrowBounce{
+ 0%,100%{transform:translateY(0) rotate(45deg);}
+ 50%{transform:translateY(5px) rotate(45deg);}
 }
 
 /* Invitation */
@@ -386,14 +395,14 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
  .tap-text{font-size:11px}
  .intro-divider{width:84%;margin-top:31px}
  .intro-hashtag{font-size:13px}
- .hero-content{width:94vw;padding:30px 12px 65px}
- .hero-logo{width:70px;height:70px;font-size:27px;margin-bottom:18px;padding:4px 0 3px;line-height:.7}
- .hero-logo .logo-letter{font-size:27px;line-height:.7}
- .hero-logo .logo-amp{font-size:18px;line-height:.7;margin:4px 0 3px}
+ .hero-content{width:94vw;padding:18px 12px 48px;transform:translateY(-28px)}
+ .hero-logo{width:70px;height:70px;font-size:27px;margin-bottom:14px;padding:4px 0 3px;line-height:1}
+ .hero-logo .logo-letter{font-size:27px;line-height:1}
+ .hero-logo .logo-amp{font-size:18px;line-height:1;margin:0 2px}
  .hero-badge{font-size:8px;letter-spacing:2px;padding:7px 14px;margin-bottom:34px}
  .hero-kicker{font-size:19px;margin-bottom:17px}
- .hero h1{font-size:clamp(52px,14vw,78px);letter-spacing:-1.8px;line-height:.82}
- .hero h1 span{margin:0 3px}
+ .hero h1{font-size:clamp(44px,11.8vw,70px);letter-spacing:-2px;line-height:.88;white-space:nowrap}
+ .hero h1 span{margin:0 2px}
  .hero-meta{gap:8px;margin-top:32px}
  .hero-meta-item{font-size:9px;padding:9px 12px;gap:6px}
  .hero-meta-item span{font-size:11px}
