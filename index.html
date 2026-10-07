@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#151515">
+<title>Arathi & Shyamanjith | Wedding Invitation</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap');
+
+:root{
+  --cream:#f5f1e9;
+  --ink:#20201e;
+  --muted:#77736b;
+  --dark:#171715;
+  --line:rgba(32,32,30,.18);
+  --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Montserrat,Arial,sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+button,a{font:inherit}
+img{display:block;max-width:100%}
+.section{padding:110px 22px}
+.inner{width:min(980px,100%);margin:auto}
+.kicker{font-size:10px;letter-spacing:4px;text-transform:uppercase;margin-bottom:22px}
+h1,h2,h3,.serif{font-family:"Cormorant Garamond",Georgia,serif;font-weight:300}
+h2{font-size:clamp(48px,8vw,90px);line-height:.9}
+.fade{opacity:0;transform:translateY(35px);transition:opacity 1s ease,transform 1s ease}
+.fade.show{opacity:1;transform:none}
+
+/* Intro */
+#intro{
+ position:fixed;inset:0;z-index:1000;display:grid;place-items:center;text-align:center;
+ color:#fff;background:
+ linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.72)),
+ url("assets/hero.jpg") center/cover no-repeat;
+ transition:opacity 1s ease,visibility 1s ease;
+}
+#intro.hide{opacity:0;visibility:hidden;pointer-events:none}
+.intro-wrap{padding:30px;max-width:800px}
+.intro-wrap .kicker{letter-spacing:5px}
+.intro-names{font-size:clamp(70px,13vw,145px);line-height:.72}
+.intro-names span{display:block;font-size:.32em;line-height:1;margin:28px 0}
+.intro-date{margin:42px 0 30px;font-size:12px;letter-spacing:5px}
+.open-btn{
+ border:1px solid rgba(255,255,255,.75);background:transparent;color:#fff;
+ padding:15px 27px;letter-spacing:3px;font-size:10px;cursor:pointer;
+ transition:.3s
+}
+.open-btn:hover{background:#fff;color:#171715}
+
+/* Hero */
+.hero{
+ min-height:100vh;position:relative;display:grid;place-items:center;text-align:center;color:#fff;
+ background:linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.62)),url("assets/hero.jpg") center/cover no-repeat;
+}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:180px;background:linear-gradient(transparent,var(--cream));opacity:.25}
+.hero-content{position:relative;z-index:1;padding:30px}
+.hero h1{font-size:clamp(78px,14vw,160px);line-height:.68}
+.hero h1 span{display:block;font-size:.3em;line-height:1;margin:35px 0}
+.hero-date{margin-top:55px;letter-spacing:5px;font-size:12px}
+.hero-place{margin-top:15px;font-size:11px;opacity:.85}
+.scroll{
+ margin-top:50px;width:54px;height:54px;border:1px solid rgba(255,255,255,.65);
+ border-radius:50%;background:transparent;color:#fff;font-size:20px;cursor:pointer
+}
+
+/* Invitation */
+.invitation{text-align:center;background:var(--cream)}
+.invitation-copy{max-width:700px;margin:auto;line-height:1.9;color:#4e4a44}
+.ornament{margin:30px 0;font-size:20px}
+.names{margin:45px 0;font-size:clamp(65px,11vw,115px);line-height:.7}
+.names span{display:block}
+.names small{display:block;font-size:32px;line-height:1;margin:25px}
+
+/* Countdown */
+.countdown-section{background:var(--dark);color:#fff;text-align:center}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);max-width:720px;margin:55px auto 0;border-top:1px solid rgba(255,255,255,.2);border-bottom:1px solid rgba(255,255,255,.2)}
+.time{padding:30px 8px}
+.time+.time{border-left:1px solid rgba(255,255,255,.18)}
+.time strong{display:block;font-family:"Cormorant Garamond",serif;font-weight:300;font-size:60px}
+.time small{font-size:9px;letter-spacing:3px;color:#aaa}
+
+/* Details */
+.details{text-align:center;background:#ebe5da}
+.details-grid{display:grid;grid-template-columns:repeat(2,1fr);max-width:780px;margin:60px auto 35px}
+.detail{padding:35px 25px}
+.detail+.detail{border-left:1px solid var(--line)}
+.detail-icon{font-size:28px;margin-bottom:15px}
+.detail h3{font-size:37px;margin-bottom:12px}
+.detail p{line-height:1.8;color:#5f5a52;font-size:14px}
+.btn{
+ display:inline-block;padding:14px 24px;border:1px solid var(--ink);text-decoration:none;color:var(--ink);
+ font-size:10px;letter-spacing:3px;transition:.3s
+}
+.btn:hover{background:var(--ink);color:#fff}
+
+/* Full image section */
+.photo-section{height:720px;position:relative;overflow:hidden}
+.photo-section img{width:100%;height:100%;object-fit:cover}
+.photo-overlay{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:#fff;background:rgba(0,0,0,.34);padding:25px}
+.photo-overlay h2{font-size:clamp(55px,10vw,110px)}
+.photo-overlay .kicker{margin-bottom:18px}
+
+/* Story */
+.story{text-align:center}
+.timeline{max-width:720px;margin:60px auto 0;text-align:left}
+.event{display:grid;grid-template-columns:75px 1fr;gap:22px;padding:34px 0;border-bottom:1px solid var(--line)}
+.event-no{font-family:"Cormorant Garamond",serif;font-size:30px}
+.event h3{font-size:34px;margin-bottom:8px}
+.event p{color:var(--muted);line-height:1.7;font-size:14px}
+
+/* Gallery */
+.gallery-section{background:#e5dfd4;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:55px}
+.gallery img{width:100%;aspect-ratio:1/1.25;object-fit:cover;transition:transform .6s ease}
+.gallery img:hover{transform:scale(1.025)}
+
+/* RSVP */
+.rsvp{text-align:center}
+.rsvp p{max-width:550px;margin:0 auto;line-height:1.8;color:var(--muted)}
+.rsvp .btn{margin-top:28px}
+
+/* Final */
+.final{
+ min-height:80vh;display:grid;place-items:center;text-align:center;color:#fff;
+ background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.72)),url("assets/hero.jpg") center/cover no-repeat;
+}
+.final h2{font-size:clamp(70px,13vw,145px);line-height:.68}
+.final h2 span{display:block;font-size:.3em;line-height:1;margin:28px}
+.final-date{margin-top:45px;letter-spacing:5px;font-size:11px}
+
+/* Music */
+.music{
+ position:fixed;right:18px;bottom:18px;z-index:50;width:52px;height:52px;border-radius:50%;
+ border:1px solid #fff;background:#171715;color:#fff;cursor:pointer;font-size:18px;
+ box-shadow:0 6px 25px rgba(0,0,0,.25)
+}
+.music.playing{animation:spin 5s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Mobile */
+@media(max-width:650px){
+ .section{padding:85px 18px}
+ .countdown{grid-template-columns:repeat(2,1fr)}
+ .time:nth-child(3){border-left:0;border-top:1px solid rgba(255,255,255,.18)}
+ .time:nth-child(4){border-top:1px solid rgba(255,255,255,.18)}
+ .details-grid{grid-template-columns:1fr}
+ .detail+.detail{border-left:0;border-top:1px solid var(--line)}
+ .photo-section{height:620px}
+ .gallery{grid-template-columns:1fr}
+ .event{grid-template-columns:48px 1fr}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*:before,*:after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+
+<body>
+
+<div id="intro">
+  <div class="intro-wrap">
+    <p class="kicker">Together with their families</p>
+    <h1 class="intro-names">Arathi<span>&amp;</span>Shyamanjith</h1>
+    <p class="intro-date">25 · 10 · 2026</p>
+    <button class="open-btn" id="open">OPEN INVITATION</button>
+  </div>
+</div>
+
+<main>
+
+<section class="hero">
+  <div class="hero-content">
+    <p class="kicker">The wedding of</p>
+    <h1>Arathi<span>&amp;</span>Shyamanjith</h1>
+    <p class="hero-date">25 OCTOBER 2026</p>
+    <p class="hero-place">Hooriya Auditorium · Puthentheru</p>
+    <button class="scroll" type="button" data-target="invitation">↓</button>
+  </div>
+</section>
+
+<section class="section invitation" id="invitation">
+  <div class="inner fade">
+    <p class="kicker">With the blessings of our families</p>
+    <h2>We invite you</h2>
+    <div class="ornament">✦</div>
+
+    <div class="invitation-copy">
+      <p>Mr. Vijayan T &amp; Mrs. Sangeetha V.C.</p>
+      <p>Thiruvangatt House, Ozhu r P.O., Malappuram<br>Phone: +91 9895215292</p>
+      <p style="margin-top:28px">We will be most honoured by your gracious presence with family to bless the auspicious occasion of the marriage of our daughter.</p>
+    </div>
+
+    <div class="names">
+      <span>Arathi</span><small>&amp;</small><span>Shyamanjith</span>
+    </div>
+
+    <div class="invitation-copy">
+      <p>S/o Mr. Pratheep Kumar &amp; Mrs. Prameela</p>
+      <p>Kuyilam Parambil (H), Sreelakam, Padinjarangadi</p>
+    </div>
+  </div>
+</section>
+
+<section class="section countdown-section">
+  <div class="inner fade">
+    <p class="kicker">Save the date</p>
+    <h2>Counting the moments</h2>
+    <div class="countdown" aria-live="polite">
+      <div class="time"><strong id="days">00</strong><small>DAYS</small></div>
+      <div class="time"><strong id="hours">00</strong><small>HOURS</small></div>
+      <div class="time"><strong id="minutes">00</strong><small>MINUTES</small></div>
+      <div class="time"><strong id="seconds">00</strong><small>SECONDS</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="section details">
+  <div class="inner fade">
+    <p class="kicker">The celebration</p>
+    <h2>Wedding Details</h2>
+
+    <div class="details-grid">
+      <article class="detail">
+        <div class="detail-icon">♡</div>
+        <h3>Muhurtham</h3>
+        <p>25 October 2026</p>
+        <p>9:30 AM – 10:30 AM</p>
+      </article>
+      <article class="detail">
+        <div class="detail-icon">⌖</div>
+        <h3>Venue</h3>
+        <p>Hooriya Auditorium</p>
+        <p>Puthentheru</p>
+      </article>
+    </div>
+
+    <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Hooriya%20Auditorium%20Puthentheru" target="_blank" rel="noopener">VIEW LOCATION</a>
+  </div>
+</section>
+
+<section class="photo-section">
+  <img src="assets/couple.jpg" alt="Arathi and Shyamanjith">
+  <div class="photo-overlay">
+    <div>
+      <p class="kicker">Two hearts</p>
+      <h2>One beautiful journey</h2>
+    </div>
+  </div>
+</section>
+
+<section class="section story">
+  <div class="inner fade">
+    <p class="kicker">Our journey</p>
+    <h2>From this moment</h2>
+
+    <div class="timeline">
+      <div class="event">
+        <div class="event-no">01</div>
+        <div><h3>The Beginning</h3><p>Every beautiful story begins with a simple moment.</p></div>
+      </div>
+      <div class="event">
+        <div class="event-no">02</div>
+        <div><h3>The Journey</h3><p>Two lives slowly became one beautiful journey.</p></div>
+      </div>
+      <div class="event">
+        <div class="event-no">03</div>
+        <div><h3>Forever</h3><p>And now, we begin our forever together.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section gallery-section">
+  <div class="inner fade">
+    <p class="kicker">Moments</p>
+    <h2>A few memories</h2>
+    <div class="gallery">
+      <img src="assets/gallery-1.jpg" alt="Memory 1">
+      <img src="assets/gallery-2.jpg" alt="Memory 2">
+      <img src="assets/gallery-3.jpg" alt="Memory 3">
+      <img src="assets/gallery-4.jpg" alt="Memory 4">
+    </div>
+  </div>
+</section>
+
+<section class="section rsvp">
+  <div class="inner fade">
+    <p class="kicker">Your presence matters</p>
+    <h2>Will you join us?</h2>
+    <p>We would be delighted to celebrate this special day with you.</p>
+    <a class="btn" href="https://wa.me/919895215292?text=Hello%20Arathi%20%26%20Shyamanjith%2C%20I%20would%20love%20to%20attend%20your%20wedding." target="_blank" rel="noopener">RSVP ON WHATSAPP</a>
+  </div>
+</section>
+
+<section class="final">
+  <div>
+    <p class="kicker">With love</p>
+    <h2>Arathi<span>&amp;</span>Shyamanjith</h2>
+    <p class="final-date">25 · 10 · 2026</p>
+  </div>
+</section>
+
+</main>
+
+<audio id="music" loop preload="none">
+  <source src="assets/wedding-music.mp3" type="audio/mpeg">
+</audio>
+<button class="music" id="musicBtn" aria-label="Play music">♫</button>
+
+<script>
+(() => {
+  const intro = document.getElementById("intro");
+  const open = document.getElementById("open");
+  const music = document.getElementById("music");
+  const musicBtn = document.getElementById("musicBtn");
+
+  open.addEventListener("click", () => {
+    intro.classList.add("hide");
+    music.play().then(() => {
+      musicBtn.textContent = "❚❚";
+      musicBtn.classList.add("playing");
+    }).catch(() => {});
+  });
+
+  musicBtn.addEventListener("click", () => {
+    if (music.paused) {
+      music.play().then(() => {
+        musicBtn.textContent = "❚❚";
+        musicBtn.classList.add("playing");
+      }).catch(() => {});
+    } else {
+      music.pause();
+      musicBtn.textContent = "♫";
+      musicBtn.classList.remove("playing");
+    }
+  });
+
+  document.querySelectorAll("[data-target]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const target = document.getElementById(btn.dataset.target);
+      if (target) target.scrollIntoView({behavior:"smooth"});
+    });
+  });
+
+  const wedding = new Date("2026-10-25T09:30:00+05:30").getTime();
+
+  function countdown() {
+    let distance = Math.max(0, wedding - Date.now());
+
+    const days = Math.floor(distance / 86400000);
+    distance %= 86400000;
+    const hours = Math.floor(distance / 3600000);
+    distance %= 3600000;
+    const minutes = Math.floor(distance / 60000);
+    distance %= 60000;
+    const seconds = Math.floor(distance / 1000);
+
+    document.getElementById("days").textContent = String(days).padStart(2,"0");
+    document.getElementById("hours").textContent = String(hours).padStart(2,"0");
+    document.getElementById("minutes").textContent = String(minutes).padStart(2,"0");
+    document.getElementById("seconds").textContent = String(seconds).padStart(2,"0");
+  }
+
+  countdown();
+  setInterval(countdown, 1000);
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add("show");
+    });
+  }, {threshold:.12});
+
+  document.querySelectorAll(".fade").forEach(el => observer.observe(el));
+})();
+</script>
+</body>
+</html>
