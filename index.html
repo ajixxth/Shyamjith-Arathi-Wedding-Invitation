@@ -314,8 +314,8 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
 .reveal-all{border:1px solid #d2b76c;background:#b09657;color:#fff8e8;border-radius:999px;padding:12px 22px;font-size:11px;letter-spacing:.5px;font-weight:600;cursor:pointer;box-shadow:0 6px 16px rgba(55,50,30,.14);transition:.25s}
 .reveal-all:hover{transform:translateY(-2px);background:#76613d}
 @media(max-width:600px){
- .reveal-date-section{min-height:480px;height:auto;padding:68px 18px 60px}
- .reveal-date-section h2{font-size:42px}
+ .reveal-date-section{min-height:480px;height:auto;padding:68px 12px 60px}
+ .reveal-date-section h2{font-size:30px;line-height:1;white-space:nowrap;letter-spacing:-.4px}
  .reveal-subtitle{font-size:16px}
  .reveal-cards{gap:12px;margin-top:34px}
  .reveal-card-wrap,.scratch-card{width:96px}
@@ -437,27 +437,42 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
 @media(max-width:650px){
   .countdown-section{
     margin:0;
-    padding:24px 0;
+    padding:18px 0;
   }
   .countdown-section .inner{
     width:calc(100% - 28px);
-    padding:62px 18px;
+    padding:30px 14px 24px;
     border-radius:24px;
+  }
+  .countdown-section .kicker{
+    font-size:8px;
+    letter-spacing:2.8px;
+    margin-bottom:9px;
+  }
+  .countdown-section h2{
+    font-size:32px;
+    line-height:.98;
+  }
+  .countdown-section .countdown-subtitle{
+    font-size:14px;
+    line-height:1.25;
+    margin-top:10px;
   }
   .countdown{
     grid-template-columns:repeat(2,1fr);
-    gap:12px;
-    margin-top:30px;
+    gap:8px;
+    margin-top:18px;
   }
   .time{
-    min-height:110px;
-    border-radius:15px;
+    min-height:72px;
+    padding:12px 8px 10px;
+    border-radius:13px;
   }
-  .time+.time{border-left:1px solid rgba(228,201,130,.58)}
-  .time strong{font-size:48px}
-  .countdown-section h2{font-size:43px}
-  .countdown-subtitle{font-size:16px}
-  .countdown-actions{gap:10px}
+  .time strong{font-size:36px}
+  .time small{margin-top:7px;font-size:8px;letter-spacing:2.2px}
+  .countdown-actions{gap:7px;margin-top:18px}
+  .calendar-btn{padding:10px 16px;font-size:9px;letter-spacing:.15px}
+  .countdown-date{font-size:10px}
 }
 
 /* Details */
