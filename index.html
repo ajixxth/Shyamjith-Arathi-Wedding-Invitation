@@ -719,6 +719,62 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
   .venue-section{padding-top:0 !important;padding-bottom:55px !important;}
   .moments-section{padding-top:0 !important;padding-bottom:24px !important;}
 }
+
+
+/* Guest Book */
+.guestbook-section{background:linear-gradient(135deg,#eee1ed 0%,#e3d2e2 52%,#dcc9dc 100%);padding:72px 14px 70px;text-align:center;color:#35164b;}
+.guestbook-card{width:min(100%,1100px);margin:0 auto;}
+.guestbook-kicker{color:#95618e;font-size:10px;letter-spacing:4px;font-weight:600;margin-bottom:8px;text-transform:uppercase;}
+.guestbook-card h2{color:#35164b;font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(48px,6vw,68px);font-weight:500;line-height:.95;margin:0;}
+.guestbook-lead{margin:12px auto 30px;color:#87647f;font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:18px;}
+.guestbook-form-card{padding:38px 36px 34px;border:1px solid #eadb9e;border-radius:28px;background:rgba(255,255,255,.72);box-shadow:0 18px 40px rgba(83,48,79,.12);text-align:left;}
+.guestbook-fields{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.guestbook-field{display:flex;flex-direction:column;gap:7px;}
+.guestbook-field.full{grid-column:1/-1;}
+.guestbook-field label{color:#5d285f;font-size:10px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;}
+.guestbook-field input,.guestbook-field select,.guestbook-field textarea{width:100%;border:1px solid #dfd0df;border-radius:17px;background:#fff;color:#43204f;padding:13px 16px;font:400 15px Montserrat,Arial,sans-serif;outline:none;transition:border-color .2s,box-shadow .2s;}
+.guestbook-field input,.guestbook-field select{height:48px;}
+.guestbook-field textarea{height:68px;resize:vertical;min-height:68px;}
+.guestbook-field input::placeholder,.guestbook-field textarea::placeholder{color:#a69aaa;}
+.guestbook-field input:focus,.guestbook-field select:focus,.guestbook-field textarea:focus{border-color:#9b6c98;box-shadow:0 0 0 3px rgba(155,108,152,.10);}
+.guestbook-actions{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:26px;}
+.guestbook-note{color:#95618e;font-size:10px;line-height:1.5;}
+.guestbook-submit{border:0;border-radius:999px;padding:13px 25px;background:linear-gradient(135deg,#9a6295,#633264);color:#fff8ff;font-size:11px;font-weight:700;letter-spacing:.6px;cursor:pointer;box-shadow:0 8px 18px rgba(99,50,100,.22);transition:.25s;white-space:nowrap;}
+.guestbook-submit:hover{transform:translateY(-2px);box-shadow:0 11px 24px rgba(99,50,100,.28);}
+.guestbook-title-row{display:flex;align-items:center;gap:8px;margin:38px 0 12px;text-align:left;color:#35164b;}
+.guestbook-title-row h3{font-family:"Cormorant Garamond",Georgia,serif;font-size:28px;font-weight:500;line-height:1;}
+.guestbook-title-icon{color:#95618e;font-size:18px;}
+.guestbook-notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;text-align:left;}
+.guest-note{padding:18px 18px 14px;border:1px solid rgba(215,196,215,.8);border-radius:18px;background:rgba(255,255,255,.82);box-shadow:0 7px 18px rgba(83,48,79,.08);}
+.guest-note-top{display:flex;align-items:center;gap:10px;}
+.guest-avatar{width:32px;height:32px;flex:0 0 32px;border-radius:50%;display:grid;place-items:center;background:#a27620;color:#fff;font-size:11px;font-weight:700;}
+.guest-note-name{color:#35164b;font-family:"Cormorant Garamond",Georgia,serif;font-size:17px;font-weight:600;line-height:1.1;}
+.guest-note-relation{display:block;margin-top:4px;color:#95618e;font-size:9px;}
+.guest-note-message{margin:15px 0 14px;color:#6f5671;font-family:"Cormorant Garamond",Georgia,serif;font-size:15px;font-style:italic;line-height:1.4;}
+.guest-note-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid rgba(215,196,215,.55);color:#9a7d99;font-size:9px;}
+.guest-note-heart{font-size:13px;color:#a276a0;}
+.guestbook-see-all{display:inline-flex;align-items:center;gap:10px;margin-top:30px;padding:12px 26px;border:1px solid #9a6695;border-radius:999px;background:#fff;color:#895685;text-decoration:none;font-size:10px;font-weight:700;letter-spacing:.5px;cursor:pointer;}
+.guestbook-see-all:hover{background:#f8eff8;}
+.guestbook-modal{position:fixed;inset:0;z-index:900;background:rgba(39,20,42,.58);display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(5px);}
+.guestbook-modal.open{display:flex;}
+.guestbook-modal-card{width:min(720px,100%);max-height:min(78vh,700px);overflow:auto;border-radius:24px;background:#f9f2f8;border:1px solid #eadb9e;padding:26px;box-shadow:0 24px 70px rgba(0,0,0,.28);text-align:left;}
+.guestbook-modal-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px;}
+.guestbook-modal-head h3{font-family:"Cormorant Garamond",Georgia,serif;color:#35164b;font-size:32px;font-weight:500;}
+.guestbook-close{width:34px;height:34px;border:0;border-radius:50%;background:#eaddea;color:#633264;cursor:pointer;font-size:20px;}
+.guestbook-all-list{display:grid;gap:12px;}
+.guestbook-empty{text-align:center;color:#8d718b;font-size:13px;padding:30px 10px;}
+@media(max-width:650px){
+  .guestbook-section{padding:55px 12px 45px;}
+  .guestbook-card h2{font-size:42px;}
+  .guestbook-lead{font-size:16px;margin-bottom:24px;}
+  .guestbook-form-card{padding:25px 16px 22px;border-radius:24px;}
+  .guestbook-fields{grid-template-columns:1fr;gap:16px;}
+  .guestbook-field.full{grid-column:auto;}
+  .guestbook-actions{align-items:stretch;flex-direction:column;gap:15px;}
+  .guestbook-submit{width:100%;}
+  .guestbook-notes{grid-template-columns:1fr;}
+  .guestbook-title-row{margin-top:30px;}
+}
 </style>
 
 </head>
@@ -904,6 +960,62 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
     </div>
   </div>
 </section>
+
+
+<section class="section guestbook-section" id="guestbook">
+  <div class="guestbook-card fade">
+    <p class="guestbook-kicker">✦ &nbsp; GUEST BOOK &nbsp; ✦</p>
+    <h2>Share your love</h2>
+    <p class="guestbook-lead">Leave a wish, a memory, or a verse for the couple.</p>
+
+    <div class="guestbook-form-card">
+      <form id="guestbookForm">
+        <div class="guestbook-fields">
+          <div class="guestbook-field">
+            <label for="guestName">Your name</label>
+            <input id="guestName" name="name" type="text" placeholder="e.g. Anand &amp; Priya" required maxlength="60">
+          </div>
+          <div class="guestbook-field">
+            <label for="guestRelation">Relationship</label>
+            <select id="guestRelation" name="relation" required>
+              <option value="Friend">Friend</option>
+              <option value="Family">Family</option>
+              <option value="Colleague">Colleague</option>
+              <option value="Cousin">Cousin</option>
+              <option value="Relative">Relative</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="guestbook-field full">
+            <label for="guestMessage">Your message, wish or verse</label>
+            <textarea id="guestMessage" name="message" placeholder="Leave a heartfelt message for Shyamjith &amp; Arathi..." required maxlength="300"></textarea>
+          </div>
+        </div>
+        <div class="guestbook-actions">
+          <span class="guestbook-note">✧ Your wish will appear in our wedding memory book</span>
+          <button class="guestbook-submit" type="submit">♢ &nbsp; SEND BLESSING</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="guestbook-title-row">
+      <span class="guestbook-title-icon">♡</span>
+      <h3>Words of Love</h3>
+    </div>
+    <div class="guestbook-notes" id="guestbookNotes"></div>
+    <button class="guestbook-see-all" id="guestbookSeeAll" type="button">SEE ALL LOVE NOTES <span id="guestbookCount">(0)</span> &nbsp; →</button>
+  </div>
+</section>
+
+<div class="guestbook-modal" id="guestbookModal" aria-hidden="true">
+  <div class="guestbook-modal-card" role="dialog" aria-modal="true" aria-labelledby="guestbookModalTitle">
+    <div class="guestbook-modal-head">
+      <h3 id="guestbookModalTitle">Words of Love</h3>
+      <button class="guestbook-close" id="guestbookClose" type="button" aria-label="Close">×</button>
+    </div>
+    <div class="guestbook-all-list" id="guestbookAllList"></div>
+  </div>
+</div>
 </main>
 
 <audio id="music" loop preload="none">
@@ -1050,6 +1162,70 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
   document.querySelector(".moments-prev")?.addEventListener("click",()=>showMoment(momentsIndex-1));
   document.querySelector(".moments-next")?.addEventListener("click",()=>showMoment(momentsIndex+1));
   momentsThumbs.forEach((btn,i)=>btn.addEventListener("click",()=>showMoment(i)));
+
+
+  // Guest book — stored locally in the visitor's browser.
+  const guestbookKey = "shyamjithArathiGuestbook";
+  const defaultGuestNotes = [
+    {name:"Prajivha", relation:"Friend", message:"Happy married life dearr 🌹🌷🌹", date:"September 7, 2026"},
+    {name:"Krishnaprasad", relation:"Friend", message:"ഒരായിരം ആശംസകൾ 🎉 💗💗", date:"September 7, 2026"}
+  ];
+  const guestbookForm = document.getElementById("guestbookForm");
+  const guestbookNotes = document.getElementById("guestbookNotes");
+  const guestbookAllList = document.getElementById("guestbookAllList");
+  const guestbookCount = document.getElementById("guestbookCount");
+  const guestbookModal = document.getElementById("guestbookModal");
+  const guestbookSeeAll = document.getElementById("guestbookSeeAll");
+  const guestbookClose = document.getElementById("guestbookClose");
+
+  function loadGuestNotes(){
+    try{
+      const saved = JSON.parse(localStorage.getItem(guestbookKey));
+      return Array.isArray(saved) && saved.length ? saved : defaultGuestNotes.slice();
+    }catch(e){ return defaultGuestNotes.slice(); }
+  }
+  function saveGuestNotes(notes){
+    try{ localStorage.setItem(guestbookKey, JSON.stringify(notes)); }catch(e){}
+  }
+  function escapeGuestText(value){
+    return String(value).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+  }
+  function noteHTML(note){
+    const initial = escapeGuestText((note.name || "G").trim().charAt(0).toUpperCase());
+    return `<article class="guest-note">
+      <div class="guest-note-top"><span class="guest-avatar">${initial}</span><div><div class="guest-note-name">${escapeGuestText(note.name)}</div><span class="guest-note-relation">${escapeGuestText(note.relation)}</span></div></div>
+      <p class="guest-note-message">“${escapeGuestText(note.message)}”</p>
+      <div class="guest-note-bottom"><span>${escapeGuestText(note.date || "Today")}</span><span class="guest-note-heart">♡</span></div>
+    </article>`;
+  }
+  function renderGuestbook(){
+    const notes = loadGuestNotes();
+    guestbookCount.textContent = `(${notes.length})`;
+    guestbookNotes.innerHTML = notes.slice(-2).reverse().map(noteHTML).join("");
+    guestbookAllList.innerHTML = notes.length ? notes.slice().reverse().map(noteHTML).join("") : `<p class="guestbook-empty">No love notes yet. Be the first to leave a blessing.</p>`;
+  }
+  guestbookForm?.addEventListener("submit", e => {
+    e.preventDefault();
+    const data = new FormData(guestbookForm);
+    const note = {
+      name: String(data.get("name") || "").trim(),
+      relation: String(data.get("relation") || "Friend").trim(),
+      message: String(data.get("message") || "").trim(),
+      date: new Date().toLocaleDateString("en-IN", {day:"numeric",month:"long",year:"numeric"})
+    };
+    if(!note.name || !note.message) return;
+    const notes = loadGuestNotes();
+    notes.push(note);
+    saveGuestNotes(notes);
+    guestbookForm.reset();
+    renderGuestbook();
+    document.getElementById("guestbookNotes")?.scrollIntoView({behavior:"smooth",block:"nearest"});
+  });
+  guestbookSeeAll?.addEventListener("click",()=>{guestbookModal.classList.add("open");guestbookModal.setAttribute("aria-hidden","false");});
+  guestbookClose?.addEventListener("click",()=>{guestbookModal.classList.remove("open");guestbookModal.setAttribute("aria-hidden","true");});
+  guestbookModal?.addEventListener("click",e=>{if(e.target===guestbookModal) guestbookClose.click();});
+  document.addEventListener("keydown",e=>{if(e.key==="Escape" && guestbookModal?.classList.contains("open")) guestbookClose.click();});
+  renderGuestbook();
 </script>
 </body>
 </html>
