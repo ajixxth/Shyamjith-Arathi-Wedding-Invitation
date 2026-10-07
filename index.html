@@ -593,6 +593,18 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
  *,*:before,*:after{animation:none!important;transition:none!important}
 }
 </style>
+/* Mobile: remove excess space between scratch reveal and countdown */
+@media(max-width:650px){
+  .reveal-date-section{
+    padding-top:42px !important;
+    padding-bottom:0 !important;
+  }
+  .countdown-section{
+    padding-top:0 !important;
+    padding-bottom:28px;
+  }
+}
+
 </head>
 
 <body class="intro-active">
