@@ -724,38 +724,37 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
 /* Guest Book */
 .guestbook-section{
   background:#F4F1E8;
-  padding:70px 14px 75px;
+  padding:55px 14px 70px;
   text-align:center;
 }
 .guestbook-card{
   width:min(100%,1100px);
   margin:0 auto;
-  padding:48px 40px 42px;
+  padding:42px 38px 38px;
   border:1px solid #d7bb68;
   border-radius:28px;
-  background:#e3eadf;
-  box-shadow:0 14px 32px rgba(201,165,72,.16);
-  position:relative;
+  background:#F4F1E8;
+  box-shadow:0 14px 32px rgba(201,165,72,.14);
 }
 .guestbook-kicker{
   color:#b28b3f;
   font-size:10px;
   letter-spacing:4px;
   font-weight:600;
-  margin:0 0 10px;
+  margin:0 0 8px;
   text-transform:uppercase;
 }
 .guestbook-card h2{
   color:#29402d;
   font-family:"Cormorant Garamond",Georgia,serif;
-  font-size:clamp(44px,6vw,68px);
+  font-size:clamp(42px,5vw,62px);
   font-weight:500;
-  line-height:.95;
+  line-height:1;
   margin:0;
 }
 .guestbook-lead{
-  max-width:700px;
-  margin:12px auto 30px;
+  max-width:680px;
+  margin:10px auto 28px;
   color:#8e7957;
   font-family:"Cormorant Garamond",Georgia,serif;
   font-style:italic;
@@ -763,22 +762,18 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
   line-height:1.45;
 }
 .guestbook-form{
-  text-align:left;
-  padding:28px 0 0;
-  border-top:1px solid rgba(176,150,87,.32);
-}
-.guestbook-fields{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:20px;
+  gap:20px 16px;
+  text-align:left;
 }
-.guestbook-field{display:flex;flex-direction:column;gap:8px}
-.guestbook-field.full{margin-top:20px}
+.guestbook-field{display:flex;flex-direction:column;gap:7px}
+.guestbook-field.full{grid-column:1 / -1}
 .guestbook-field label{
   color:#29402d;
   font-size:10px;
-  letter-spacing:2px;
-  font-weight:600;
+  letter-spacing:1.5px;
+  font-weight:700;
   text-transform:uppercase;
 }
 .guestbook-field input,
@@ -786,71 +781,95 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
 .guestbook-field textarea{
   width:100%;
   border:1px solid rgba(176,150,87,.42);
-  border-radius:15px;
-  background:#F4F1E8;
+  border-radius:14px;
+  background:#fffdfa;
   color:#29402d;
-  padding:14px 16px;
-  font-family:Montserrat,Arial,sans-serif;
-  font-size:13px;
+  padding:13px 15px;
   outline:none;
-  transition:border-color .25s ease,box-shadow .25s ease;
+  font-family:Montserrat,Arial,sans-serif;
+  font-size:12px;
+  transition:border-color .2s ease,box-shadow .2s ease;
 }
+.guestbook-field textarea{min-height:120px;resize:vertical;line-height:1.6}
 .guestbook-field input:focus,
 .guestbook-field select:focus,
 .guestbook-field textarea:focus{
   border-color:#b28b3f;
   box-shadow:0 0 0 3px rgba(176,139,63,.10);
 }
-.guestbook-field textarea{min-height:125px;resize:vertical;line-height:1.6}
 .guestbook-bottom{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
-  margin-top:24px;
+  gap:18px;
+  margin-top:22px;
 }
 .guestbook-note{
   color:#8e7957;
   font-size:11px;
   line-height:1.5;
+  text-align:left;
 }
 .guestbook-submit{
   border:0;
   border-radius:999px;
   padding:13px 24px;
-  background:linear-gradient(135deg,#e7cf91,#c7a95b);
-  color:#29402d;
-  font-size:11px;
+  background:linear-gradient(135deg,#3f6042,#29402d);
+  color:#f4ead5;
+  font-size:10px;
   font-weight:700;
-  letter-spacing:.7px;
+  letter-spacing:1px;
   cursor:pointer;
-  box-shadow:0 8px 18px rgba(201,165,72,.20);
+  box-shadow:0 8px 18px rgba(41,64,45,.18);
   transition:transform .25s ease,box-shadow .25s ease;
 }
-.guestbook-submit:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(201,165,72,.28)}
+.guestbook-submit:hover{transform:translateY(-2px);box-shadow:0 11px 24px rgba(41,64,45,.24)}
 .guestbook-success{
   display:none;
-  margin-top:18px;
-  padding:12px 16px;
-  border:1px solid rgba(176,150,87,.35);
-  border-radius:12px;
-  background:#F4F1E8;
+  margin-top:14px;
   color:#59604f;
-  font-family:"Cormorant Garamond",Georgia,serif;
-  font-size:17px;
-  font-style:italic;
+  font-size:11px;
+  text-align:center;
 }
 .guestbook-success.show{display:block}
+
+/* Back to top */
+.back-to-top{
+  position:fixed;
+  left:18px;
+  bottom:18px;
+  z-index:49;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 17px;
+  border:1px solid rgba(231,207,145,.55);
+  border-radius:999px;
+  background:rgba(41,64,45,.92);
+  color:#f4ead5;
+  text-decoration:none;
+  font-size:11px;
+  box-shadow:0 7px 20px rgba(41,64,45,.22);
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(8px);
+  transition:opacity .25s ease,visibility .25s ease,transform .25s ease;
+  backdrop-filter:blur(7px);
+}
+.back-to-top.visible{opacity:1;visibility:visible;transform:none}
+.back-to-top:hover{background:#3f6042;transform:translateY(-2px)}
+
 @media(max-width:650px){
-  .guestbook-section{padding:55px 12px 45px}
-  .guestbook-card{padding:34px 16px 30px;border-radius:24px}
-  .guestbook-card h2{font-size:42px}
-  .guestbook-lead{font-size:16px;margin-bottom:24px}
-  .guestbook-form{padding-top:22px}
-  .guestbook-fields{grid-template-columns:1fr;gap:16px}
-  .guestbook-field.full{margin-top:16px}
-  .guestbook-bottom{flex-direction:column;align-items:stretch;gap:14px}
+  .guestbook-section{padding:45px 12px 55px}
+  .guestbook-card{padding:32px 16px 28px;border-radius:24px}
+  .guestbook-card h2{font-size:36px}
+  .guestbook-lead{font-size:16px;margin-bottom:22px}
+  .guestbook-form{grid-template-columns:1fr;gap:15px}
+  .guestbook-field.full{grid-column:auto}
+  .guestbook-bottom{align-items:stretch;flex-direction:column;gap:14px}
+  .guestbook-note{text-align:center}
   .guestbook-submit{width:100%}
+  .back-to-top{left:12px;bottom:14px;font-size:10px;padding:9px 14px}
 }
 
 </style>
@@ -858,6 +877,10 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
 </head>
 
 <body class="intro-active">
+<div id="top"></div>
+
+<a class="back-to-top" id="backToTop" href="#top" aria-label="Back to top">↑ &nbsp; Back to Top</a>
+
 
 <div id="intro">
   <div class="intro-card">
@@ -1039,41 +1062,43 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
   </div>
 </section>
 
-<section class="section guestbook-section">
+
+<section class="section guestbook-section" id="guestbook">
   <div class="guestbook-card fade">
     <p class="guestbook-kicker">✦ &nbsp; GUEST BOOK &nbsp; ✦</p>
     <h2>Share your love</h2>
     <p class="guestbook-lead">Leave a wish, a memory, or a verse for the couple.</p>
 
     <form class="guestbook-form" id="guestbookForm">
-      <div class="guestbook-fields">
-        <div class="guestbook-field">
-          <label for="guestName">Your Name</label>
-          <input id="guestName" name="guestName" type="text" placeholder="e.g. Anand &amp; Priya" required>
-        </div>
-        <div class="guestbook-field">
-          <label for="guestRelation">Relationship</label>
-          <select id="guestRelation" name="guestRelation">
-            <option value="Friend">Friend</option>
-            <option value="Family">Family</option>
-            <option value="Relative">Relative</option>
-            <option value="Colleague">Colleague</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
+      <div class="guestbook-field">
+        <label for="guestName">Your Name</label>
+        <input id="guestName" name="name" type="text" placeholder="e.g. Anand &amp; Priya" required>
+      </div>
+
+      <div class="guestbook-field">
+        <label for="guestRelationship">Relationship</label>
+        <select id="guestRelationship" name="relationship" required>
+          <option value="" selected disabled>Select relationship</option>
+          <option>Friend</option>
+          <option>Family</option>
+          <option>Colleague</option>
+          <option>Relative</option>
+          <option>Neighbour</option>
+          <option>Other</option>
+        </select>
       </div>
 
       <div class="guestbook-field full">
         <label for="guestMessage">Your Message, Wish or Verse</label>
-        <textarea id="guestMessage" name="guestMessage" placeholder="Leave a heartfelt message for Shyamjith &amp; Arathi..." required></textarea>
+        <textarea id="guestMessage" name="message" placeholder="Leave a heartfelt message for Shyamjith &amp; Arathi..." required></textarea>
       </div>
 
-      <div class="guestbook-bottom">
-        <p class="guestbook-note">✦ Your message is a special part of our wedding memories.</p>
-        <button class="guestbook-submit" type="submit">✈ &nbsp; SEND BLESSING</button>
+      <div class="guestbook-bottom full">
+        <p class="guestbook-note">✦ Your wish will be kept as a special part of our wedding memories.</p>
+        <button class="guestbook-submit" type="submit">♡ &nbsp; SEND BLESSING</button>
       </div>
-      <div class="guestbook-success" id="guestbookSuccess" role="status"></div>
     </form>
+    <p class="guestbook-success" id="guestbookSuccess">Your blessing has been added to our guest book.</p>
   </div>
 </section>
 
@@ -1195,18 +1220,6 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
   document.querySelectorAll(".fade").forEach(el => observer.observe(el));
 })();
 
-  // Guest book
-  const guestbookForm = document.getElementById("guestbookForm");
-  const guestbookSuccess = document.getElementById("guestbookSuccess");
-  guestbookForm?.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const name = document.getElementById("guestName").value.trim();
-    if (!name) return;
-    guestbookSuccess.textContent = `Thank you, ${name}. Your blessing has been received with love.`;
-    guestbookSuccess.classList.add("show");
-    guestbookForm.reset();
-  });
-
 
   const momentsImages = Array.from(document.querySelectorAll(".moments-thumb img")).map(img => img.src);
   const momentsCaptions = [
@@ -1235,6 +1248,33 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
   document.querySelector(".moments-prev")?.addEventListener("click",()=>showMoment(momentsIndex-1));
   document.querySelector(".moments-next")?.addEventListener("click",()=>showMoment(momentsIndex+1));
   momentsThumbs.forEach((btn,i)=>btn.addEventListener("click",()=>showMoment(i)));
+
+  // Guest book — stored locally in this browser so entries remain available on this device.
+  const guestbookForm = document.getElementById("guestbookForm");
+  const guestbookSuccess = document.getElementById("guestbookSuccess");
+  guestbookForm?.addEventListener("submit", e => {
+    e.preventDefault();
+    const data = {
+      name: document.getElementById("guestName").value.trim(),
+      relationship: document.getElementById("guestRelationship").value,
+      message: document.getElementById("guestMessage").value.trim(),
+      date: new Date().toLocaleDateString("en-IN", {day:"numeric", month:"long", year:"numeric"})
+    };
+    if(!data.name || !data.relationship || !data.message) return;
+    const entries = JSON.parse(localStorage.getItem("shyamjithArathiGuestbook") || "[]");
+    entries.push(data);
+    localStorage.setItem("shyamjithArathiGuestbook", JSON.stringify(entries));
+    guestbookForm.reset();
+    guestbookSuccess.classList.add("show");
+    setTimeout(() => guestbookSuccess.classList.remove("show"), 4000);
+  });
+
+  // Back-to-top button
+  const backToTop = document.getElementById("backToTop");
+  const toggleBackToTop = () => backToTop?.classList.toggle("visible", window.scrollY > 500);
+  window.addEventListener("scroll", toggleBackToTop, {passive:true});
+  toggleBackToTop();
+
 </script>
 </body>
 </html>
