@@ -199,24 +199,82 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
 }
 .open-btn:hover{background:#fff;color:#171715}
 
-/* Hero */
+/* Hero / First Page */
 .hero{
- min-height:100vh;position:relative;display:grid;place-items:center;text-align:center;color:#fff;
+ min-height:100vh;height:100vh;position:relative;display:grid;place-items:center;
+ text-align:center;color:#fff;overflow:hidden;
  background:
- linear-gradient(rgba(18,18,17,.30),rgba(18,18,17,.68)),
- url("assets/hero.jpg") center/cover no-repeat,
- linear-gradient(180deg,#68645d 0%,#292824 100%);
+ radial-gradient(circle at 50% 18%,rgba(121,145,104,.30),transparent 38%),
+ linear-gradient(135deg,#536f4e 0%,#3f6042 42%,#2f4e35 72%,#263f2c 100%);
 }
-.hero:after{content:"";position:absolute;inset:auto 0 0;height:180px;background:linear-gradient(transparent,var(--cream));opacity:.25}
-.hero-content{position:relative;z-index:1;padding:30px}
-.hero h1{font-size:clamp(78px,14vw,160px);line-height:.68}
-.hero h1 span{display:block;font-size:.3em;line-height:1;margin:35px 0}
-.hero-date{margin-top:55px;letter-spacing:5px;font-size:12px}
-.hero-place{margin-top:15px;font-size:11px;opacity:.85}
-.scroll{
- margin-top:50px;width:54px;height:54px;border:1px solid rgba(255,255,255,.65);
- border-radius:50%;background:transparent;color:#fff;font-size:20px;cursor:pointer
+.hero:before{
+ content:"";position:absolute;inset:0;pointer-events:none;
+ background:radial-gradient(circle at 50% 38%,rgba(236,225,196,.10),transparent 40%),
+ linear-gradient(90deg,rgba(28,49,32,.16),transparent 45%,rgba(28,49,32,.16));
 }
+.hero:after{
+ content:"";position:absolute;inset:auto 0 0;height:180px;
+ background:linear-gradient(transparent,var(--cream));opacity:.18;pointer-events:none;
+}
+.hero-content{
+ position:relative;z-index:2;width:min(1050px,92vw);padding:40px 20px 70px;
+ display:flex;flex-direction:column;align-items:center;
+}
+.hero-logo{
+ width:78px;height:78px;border-radius:50%;display:flex;flex-direction:row;align-items:center;justify-content:center;
+ margin-bottom:24px;padding:5px 8px;
+ border:1px solid rgba(220,192,127,.82);
+ background:radial-gradient(circle at 50% 40%,#425c43 0%,#29402d 62%,#1d2d20 100%);
+ color:#e4c982;box-shadow:0 0 0 7px rgba(228,201,130,.08),0 10px 30px rgba(0,0,0,.22);
+ font-family:"Cormorant Garamond",Georgia,serif;font-size:28px;font-style:italic;
+ line-height:1;
+}
+.hero-logo .logo-letter{display:block;font-size:28px;line-height:1;margin:0}
+.hero-logo .logo-amp{display:block;font-size:19px;line-height:1;margin:0 4px}
+.hero-badge{
+ display:inline-flex;align-items:center;gap:8px;padding:8px 20px;
+ border:1px solid rgba(232,211,168,.72);border-radius:999px;
+ background:rgba(38,62,42,.48);backdrop-filter:blur(7px);
+ color:#f4ead5;font-size:10px;font-weight:500;letter-spacing:3px;margin-bottom:52px;
+}
+.hero-kicker{
+ font-family:"Cormorant Garamond",Georgia,serif;color:#ead29a;font-size:24px;
+ font-style:italic;margin-bottom:22px;
+}
+.hero h1{
+ font-size:clamp(68px,10.5vw,145px);line-height:.78;letter-spacing:-3px;font-weight:500;
+ text-shadow:0 4px 24px rgba(0,0,0,.28);
+}
+.hero h1 span{display:inline;font-size:1em;line-height:1;margin:0 7px;color:#efd481;font-style:italic}
+.hero-meta{
+ display:flex;justify-content:center;align-items:center;gap:14px;margin-top:48px;flex-wrap:wrap;
+}
+.hero-meta-item{
+ display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border-radius:999px;
+ background:rgba(28,47,32,.78);border:1px solid rgba(224,215,184,.12);color:#fff;font-size:12px;
+}
+.hero-meta-item span{color:#e7cf91;font-size:14px}
+.hero-quote{
+ max-width:720px;margin:30px auto 0;color:rgba(255,255,255,.9);
+ font-family:"Cormorant Garamond",Georgia,serif;font-size:21px;line-height:1.45;font-style:italic;
+ text-shadow:0 2px 12px rgba(0,0,0,.3);
+}
+.hero-reveal{
+ position:relative;margin-top:46px;display:flex;align-items:center;justify-content:center;
+ width:290px;height:38px;padding:0 38px;border:1px solid rgba(230,203,139,.82);
+ border-radius:999px;background:rgba(107,128,91,.82);
+ color:#fff4dc;font-size:10px;font-weight:600;letter-spacing:2px;cursor:pointer;
+ transition:transform .3s ease,background .3s ease,box-shadow .3s ease;
+}
+.hero-reveal:hover{transform:translateY(-2px);background:rgba(83,107,74,.94);box-shadow:0 8px 25px rgba(0,0,0,.2)}
+.hero-reveal .heart{position:absolute;left:21px;top:50%;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;
+ color:#fff4dc;font-size:10px;line-height:1}
+.hero-reveal-arrow{width:12px;height:8px;margin:9px auto 0;position:relative;display:block}
+.hero-reveal-arrow::before,.hero-reveal-arrow::after{
+ content:"";position:absolute;top:2px;width:8px;height:1.5px;background:#f0d486;border-radius:2px;
+}
+.hero-reveal-arrow::before{left:0;transform:rotate(45deg);transform-origin:right center}
+.hero-reveal-arrow::after{right:0;transform:rotate(-45deg);transform-origin:left center}
 
 /* Invitation */
 .invitation{text-align:center;background:var(--cream)}
@@ -325,6 +383,21 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
  .tap-text{font-size:11px}
  .intro-divider{width:84%;margin-top:31px}
  .intro-hashtag{font-size:13px}
+ .hero-content{width:94vw;padding:30px 12px 65px}
+ .hero-logo{width:70px;height:70px;font-size:27px;margin-bottom:18px;padding:4px 5px;line-height:1}
+ .hero-logo .logo-letter{font-size:27px;line-height:1}
+ .hero-logo .logo-amp{font-size:18px;line-height:1;margin:0 3px}
+ .hero-badge{font-size:8px;letter-spacing:2px;padding:7px 14px;margin-bottom:34px}
+ .hero-kicker{font-size:19px;margin-bottom:17px}
+ .hero h1{font-size:clamp(52px,14vw,78px);letter-spacing:-1.8px;line-height:.82}
+ .hero h1 span{margin:0 3px}
+ .hero-meta{gap:8px;margin-top:32px}
+ .hero-meta-item{font-size:9px;padding:9px 12px;gap:6px}
+ .hero-meta-item span{font-size:11px}
+ .hero-quote{font-size:17px;line-height:1.38;margin-top:24px;max-width:340px}
+ .hero-reveal{min-width:0;width:min(290px,76vw);height:38px;margin-top:32px;padding:0 34px;font-size:8px;letter-spacing:1.45px}
+ .hero-reveal .heart{left:18px;font-size:9px}
+ .hero-reveal-arrow{margin-top:9px}
  .countdown{grid-template-columns:repeat(2,1fr)}
  .time:nth-child(3){border-left:0;border-top:1px solid rgba(255,255,255,.18)}
  .time:nth-child(4){border-top:1px solid rgba(255,255,255,.18)}
@@ -377,11 +450,22 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
 
 <section class="hero">
   <div class="hero-content">
-    <p class="kicker">The wedding of</p>
-    <h1>Shyamjith<span>&amp;</span>Arathi</h1>
-    <p class="hero-date">25 OCTOBER 2026</p>
-    <p class="hero-place">Hooriya Auditorium · Puthentheru</p>
-    <button class="scroll" type="button" data-target="invitation">↓</button>
+    <div class="hero-logo" aria-hidden="true"><span class="logo-letter">S</span><span class="logo-amp">&amp;</span><span class="logo-letter">A</span></div>
+    <div class="hero-badge">✦ &nbsp; THE WEDDING INVITATION &nbsp; ✦</div>
+    <p class="hero-kicker">Together with our families</p>
+    <h1>Shyamjith <span>&amp;</span> Arathi</h1>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><span>▣</span> Sunday, 25 October 2026</div>
+      <div class="hero-meta-item"><span>⌖</span> Hooriya Auditorium, Puthentheru</div>
+    </div>
+    <p class="hero-quote">
+      “With the love and support of our beloved families, we invite you to share
+      in the joy of our union as we begin a new chapter of love, laughter, and forever.”
+    </p>
+    <button class="hero-reveal" type="button" data-target="invitation">
+      <span class="heart">♥</span> SCRATCH TO REVEAL DATE
+    </button>
+    <span class="hero-reveal-arrow" aria-hidden="true"></span>
   </div>
 </section>
 
