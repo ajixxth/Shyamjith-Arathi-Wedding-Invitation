@@ -980,6 +980,91 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
   .intro-hashtag{font-size:12px}
 }
 
+
+/* Final mobile refinement — music control + first-page composition */
+@media(max-width:650px){
+  .music{
+    right:9px;
+    bottom:9px;
+    width:94px;
+    height:36px;
+    padding:3px 8px 3px 3px;
+    gap:6px;
+    box-sizing:border-box;
+  }
+  .music-toggle{
+    width:30px;
+    height:30px;
+    flex-basis:30px;
+  }
+  .music-icon{width:11px;height:13px;transform:none}
+  .music-icon.play::before{
+    left:2px;top:1px;
+    border-top-width:5.5px;
+    border-bottom-width:5.5px;
+    border-left-width:8px;
+  }
+  .music-icon.pause{gap:2px}
+  .music-icon.pause::before,.music-icon.pause::after{width:2.5px;height:11px}
+  .music-divider{height:18px}
+  .music-bars{width:13px;height:18px;gap:1.5px}
+  .music-bars i{width:1.5px;height:6px}
+  .music-label{font-size:8px;letter-spacing:1.35px}
+
+  .hero-content{
+    width:min(94vw,520px);
+    padding:16px 10px 42px;
+    transform:translateY(-22px);
+    box-sizing:border-box;
+  }
+  .hero-logo{
+    width:66px;height:66px;
+    margin-bottom:13px;
+  }
+  .hero-badge{
+    padding:7px 14px;
+    margin-bottom:27px;
+  }
+  .hero-kicker{
+    font-size:18px;
+    margin-bottom:13px;
+  }
+  .hero h1{
+    width:100%;
+    max-width:100%;
+    font-size:clamp(42px,10.8vw,64px);
+    letter-spacing:-1.7px;
+    line-height:.9;
+  }
+  .hero-meta{
+    width:100%;
+    gap:8px;
+    margin-top:25px;
+    align-items:stretch;
+    flex-wrap:nowrap;
+  }
+  .hero-meta-item{
+    flex:1 1 0;
+    min-width:0;
+    justify-content:center;
+    text-align:center;
+    padding:9px 10px;
+    line-height:1.25;
+  }
+  .hero-quote{
+    width:100%;
+    max-width:335px;
+    margin-top:21px;
+    font-size:16.5px;
+    line-height:1.4;
+  }
+  .hero-reveal-wrap{margin-top:28px}
+  .hero-reveal{
+    width:min(290px,76vw);
+    height:38px;
+  }
+  .hero-reveal-wrap > .arrow{margin-top:10px}
+}
 </style>
 
 </head>
@@ -1218,7 +1303,7 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
   <span class="music-toggle"><span id="musicIcon" class="music-icon play" aria-hidden="true"></span></span>
   <span class="music-divider" aria-hidden="true"></span>
   <span class="music-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-  <span class="music-label">AS</span>
+  <span class="music-label">SA</span>
 </button>
 
 <script>
