@@ -35,11 +35,14 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
 #intro{
  position:fixed;inset:0;z-index:1000;display:grid;place-items:center;text-align:center;
  color:#3c4032;
+ /* Atmospheric wedding-theme background: soft vignette, green depth and muted gold warmth. */
  background:
-   radial-gradient(circle at 10% 18%, rgba(63,96,66,.13) 0%, rgba(63,96,66,0) 30%),
-   radial-gradient(circle at 88% 78%, rgba(231,207,145,.16) 0%, rgba(231,207,145,0) 27%),
-   radial-gradient(circle at 52% 42%, rgba(41,64,45,.055) 0%, rgba(41,64,45,0) 38%),
-   linear-gradient(135deg, #f4f1e8 0%, #e8ede3 48%, #f4f1e8 100%);
+   radial-gradient(ellipse 58% 48% at 50% 50%, rgba(248,246,237,.96) 0%, rgba(244,241,232,.88) 42%, rgba(232,236,225,.34) 76%, transparent 100%),
+   radial-gradient(circle at 7% 12%, rgba(63,96,66,.18) 0%, rgba(63,96,66,.08) 20%, transparent 43%),
+   radial-gradient(circle at 93% 88%, rgba(231,207,145,.23) 0%, rgba(231,207,145,.10) 18%, transparent 40%),
+   radial-gradient(circle at 92% 9%, rgba(48,77,53,.10) 0%, transparent 31%),
+   radial-gradient(circle at 8% 91%, rgba(41,64,45,.09) 0%, transparent 32%),
+   linear-gradient(135deg,#e7ebe0 0%,#f4f1e8 43%,#f2efe5 68%,#e5e9df 100%);
  transition:opacity 1s ease,visibility 1s ease;
 }
 #intro.hide{opacity:0;visibility:hidden;pointer-events:none}
@@ -889,6 +892,65 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
   .guestbook-note{text-align:center}
   .guestbook-submit{width:100%}
   .back-to-top{margin:4px auto 28px;font-size:10px;padding:9px 14px}
+}
+
+/* Final mobile opening-card optimization */
+@media(max-width:650px){
+  #intro{
+    padding:18px 0;
+  }
+  .intro-card{
+    width:min(92vw,380px);
+    min-height:0;
+    padding:28px 20px 26px;
+    border-radius:22px;
+  }
+  .intro-card::after{
+    inset:10px;
+    border-radius:15px;
+  }
+  .intro-kicker{
+    font-size:8px;
+    letter-spacing:2.8px;
+    margin-bottom:16px;
+  }
+  .intro-card-names{
+    font-size:clamp(32px,9.2vw,42px);
+    line-height:.98;
+    letter-spacing:-.45px;
+    white-space:nowrap;
+  }
+  .intro-card-date{
+    font-size:8.5px;
+    letter-spacing:1.15px;
+    margin-top:15px;
+  }
+  .seal{
+    width:104px;
+    height:104px;
+    margin:30px auto 17px;
+  }
+  .seal-initials{font-size:32px}
+  .tap-text{font-size:10.5px}
+  .intro-divider{
+    width:82%;
+    margin:28px auto 12px;
+  }
+  .intro-hashtag{font-size:12.5px}
+}
+
+@media(max-width:380px){
+  .intro-card{
+    width:92vw;
+    padding:25px 17px 23px;
+  }
+  .intro-kicker{font-size:7.5px;letter-spacing:2.5px}
+  .intro-card-names{font-size:31px}
+  .intro-card-date{font-size:8px;letter-spacing:1px}
+  .seal{width:96px;height:96px;margin-top:27px}
+  .seal-initials{font-size:30px}
+  .intro-divider{margin-top:25px}
+  .intro-hashtag{font-size:12px}
 }
 
 </style>
