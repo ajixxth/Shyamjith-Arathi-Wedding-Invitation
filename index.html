@@ -1099,6 +1099,32 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
 #music{display:none}
 main{min-height:0}
 html,body{min-height:0}
+
+/* Mobile-only page-end correction: remove trailing blank document space after Back to Top. */
+@media(max-width:650px){
+  html,body{
+    min-height:0 !important;
+    height:auto !important;
+    margin-bottom:0 !important;
+    padding-bottom:0 !important;
+  }
+  main{
+    min-height:0 !important;
+    height:auto !important;
+    margin-bottom:0 !important;
+    padding-bottom:0 !important;
+  }
+  .guestbook-section{
+    min-height:0 !important;
+    height:auto !important;
+    margin-bottom:0 !important;
+    padding-bottom:8px !important;
+  }
+  .guestbook-card{margin-bottom:0 !important;}
+  .back-to-top{
+    margin:0 auto 8px !important;
+  }
+}
 </style>
 
 </head>
