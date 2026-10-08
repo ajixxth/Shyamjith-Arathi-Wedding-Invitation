@@ -35,7 +35,11 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
 #intro{
  position:fixed;inset:0;z-index:1000;display:grid;place-items:center;text-align:center;
  color:#3c4032;
- background:#dfe5d5;
+ background:
+   radial-gradient(circle at 10% 18%, rgba(63,96,66,.13) 0%, rgba(63,96,66,0) 30%),
+   radial-gradient(circle at 88% 78%, rgba(231,207,145,.16) 0%, rgba(231,207,145,0) 27%),
+   radial-gradient(circle at 52% 42%, rgba(41,64,45,.055) 0%, rgba(41,64,45,0) 38%),
+   linear-gradient(135deg, #f4f1e8 0%, #e8ede3 48%, #f4f1e8 100%);
  transition:opacity 1s ease,visibility 1s ease;
 }
 #intro.hide{opacity:0;visibility:hidden;pointer-events:none}
