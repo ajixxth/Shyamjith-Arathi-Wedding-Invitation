@@ -538,12 +538,15 @@ h2{font-size:clamp(48px,8vw,90px);line-height:.9}
 .single-event-grid{grid-template-columns:minmax(0,560px);max-width:560px;margin:0 auto}
 .family-card,.event-card{border:1px solid rgba(176,150,87,.42);border-radius:18px;background:#e3eadf;padding:25px 22px;box-shadow:0 8px 20px rgba(50,55,35,.08)}
 .family-label,.event-time{color:#b28b3f;font-size:10px;letter-spacing:3px;font-weight:600;text-transform:uppercase}
+/* Elegant gold timing pills for the event cards */
+.event-time{display:inline-flex;align-items:center;gap:5px;padding:8px 13px;border:1px solid rgba(178,139,63,.32);border-radius:999px;background:rgba(245,231,190,.62);letter-spacing:2px;line-height:1.2;white-space:nowrap;}
+@media(max-width:650px){.event-time{font-size:9px;letter-spacing:1.5px;padding:7px 10px;}}
 .family-card h3,.event-card h3{color:#29402d;font-family:"Cormorant Garamond",Georgia,serif;font-size:27px;line-height:1.05;margin:10px 0 6px}
 .family-role{color:#8e7957;font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:14px;margin:0}
 .family-note,.event-card p{color:#59604f;font-size:12px;line-height:1.6;margin:10px 0 0}
 .invitation-date{text-align:center;margin:30px 0 24px}
 .invitation-date-label{display:block;color:#8e7957;font-size:10px;letter-spacing:2px;font-weight:600;text-transform:uppercase;margin-bottom:5px}
-.invitation-date strong{color:#b28b3f;font-family:"Cormorant Garamond",Georgia,serif;font-size:28px}
+.invitation-date strong{color:#c09232;font-family:"Cormorant Garamond",Georgia,serif;font-size:28px;text-shadow:0 1px 0 rgba(255,255,255,.35)}
 .event-card{text-align:left;background:#e3eadf}
 .event-card h3{font-size:25px;margin-top:9px}
 .event-meta{color:#59604f;font-size:11px;line-height:1.6;margin-top:14px;padding-top:12px;border-top:1px solid rgba(176,150,87,.22)}
@@ -1431,6 +1434,13 @@ html,body{min-height:0}
   });
 
   music.addEventListener("ended", pauseMusic);
+
+  // Stop music whenever the visitor leaves the visible page or switches away.
+  // Returning to the page does not restart it automatically.
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") pauseMusic();
+  });
+  window.addEventListener("pagehide", pauseMusic);
 
   document.querySelectorAll("[data-target]").forEach(btn => {
     btn.addEventListener("click", () => {
